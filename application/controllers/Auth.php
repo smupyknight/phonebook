@@ -22,7 +22,7 @@ class Auth extends CI_Controller
 	public function index()
 	{
 		if (!$this->ion_auth->logged_in()) {
-			redirect('auth/login', 'refresh');
+			redirect('login', 'refresh');
 		} else if (!$this->ion_auth->is_admin()) {
 			return show_error('You must be an administrator to view this page.');
 		} else {
@@ -45,7 +45,7 @@ class Auth extends CI_Controller
 				redirect('/', 'refresh');
 			} else {
 				$this->session->set_flashdata('message', $this->ion_auth->errors());
-				redirect('auth/login', 'refresh');
+				redirect('login', 'refresh');
 			}
 		} else {
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
@@ -75,7 +75,7 @@ class Auth extends CI_Controller
 		$logout = $this->ion_auth->logout();
 
 		$this->session->set_flashdata('message', $this->ion_auth->messages());
-		redirect('auth/login', 'refresh');
+		redirect('login', 'refresh');
 	}
 
 	public function _render_page($view, $data = NULL, $returnhtml = FALSE)//I think this makes more sense

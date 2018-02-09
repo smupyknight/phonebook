@@ -19,8 +19,8 @@
 				<td><?php echo htmlspecialchars($item->date_of_adding, ENT_QUOTES, 'UTF-8'); ?></td>
 				<td><?php echo htmlspecialchars($item->additional_notes, ENT_QUOTES, 'UTF-8'); ?></td>
 				<td>
-					<a href="update/<?php echo $item->id; ?>"> Update </a>
-					<a href="delete/<?php echo $item->id; ?>"> Delete </a>
+					<a href="<?php echo base_url(); ?>update/<?php echo $item->id; ?>"> Update </a>
+					<a href="<?php echo base_url(); ?>delete/<?php echo $item->id; ?>"> Delete </a>
 				</td>
 			</tr>
 		<?php endforeach; ?>

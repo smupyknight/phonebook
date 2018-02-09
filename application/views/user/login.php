@@ -4,7 +4,7 @@
 
 	<div id="infoMessage"><?php echo $message; ?></div>
 
-	<?php echo form_open("auth/login", array('class' => 'login-form', 'id' => 'login-form'));?>
+	<?php echo form_open(base_url() . "login", array('class' => 'login-form', 'id' => 'login-form'));?>
 		<div class="form-group">
 			<?php echo lang('login_identity_label', 'identity'); ?>
 			<?php echo form_input($identity); ?>

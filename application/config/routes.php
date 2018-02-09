@@ -57,5 +57,6 @@ $route['create'] = 'phonebook/create';
 $route['update/(:num)'] = 'phonebook/update/$1';
 $route['delete/(:num)'] = 'phonebook/delete/$1';
 
-$route['auth/login'] = 'auth/login';
-$route['auth/register'] = 'auth/register';
+$route['login'] = 'auth/login';
+$route['register'] = 'auth/register';
+$route['logout'] = 'auth/logout';

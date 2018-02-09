@@ -1,7 +1,8 @@
 <div class="d-flex justify-content-center">
-	<div id="infoMessage"><?php echo $message; ?></div>
 
-	<?php echo form_open("$type/$id", array('class' => 'data-form', 'id' => 'data-form'));?>
+	<?php echo form_open(base_url() . "$type/$id", array('class' => 'data-form', 'id' => 'data-form'));?>
+		<div id="infoMessage"><?php echo $message; ?></div>
+
 		<div class="form-group">
 			<label for="name">Name</label>
 			<?php echo form_input($name); ?>

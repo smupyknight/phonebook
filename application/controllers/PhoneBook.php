@@ -33,6 +33,7 @@ class PhoneBook extends BaseController
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->library(array('ion_auth', 'form_validation'));
 		$this->load->model('phonebook_model');
 
 		$this->method = $this->input->method();
@@ -54,8 +55,26 @@ class PhoneBook extends BaseController
 
 			$this->render('phonebook/form', $this->data);
 		} else if ($this->method == 'post') {
-			$this->phonebook_model->create($this->input->post());
-			redirect('/');
+
+			$this->form_validation->set_rules('name', 'Name', 'required');
+			$this->form_validation->set_rules('phone_number', 'Phone number', 'required');
+			$this->form_validation->set_rules('date_of_adding', 'Date of adding', 'required');
+			$this->form_validation->set_rules('additional_notes', 'Additional notes', 'required');
+
+			if ($this->form_validation->run() === TRUE) {
+				$this->phonebook_model->create($this->input->post());
+				redirect('/');
+			} else {
+				$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+				$this->data['id'] = '';
+				$this->data['name']['value'] = $this->form_validation->set_value('name');
+				$this->data['phone_number']['value'] = $this->form_validation->set_value('phone_number');
+				$this->data['date_of_adding']['value'] = $this->form_validation->set_value('date_of_adding');
+				$this->data['additional_notes']['value'] = $this->form_validation->set_value('additional_notes');
+
+				$this->render('phonebook/form', $this->data);
+			}
 		}
 	}
 
@@ -79,8 +98,26 @@ class PhoneBook extends BaseController
 				redirect('/');
 			}
 		} else if ($this->method == 'post') {
-			$this->phonebook_model->update($id, $this->input->post());
-			redirect('/');
+			$this->form_validation->set_rules('name', 'Name', 'required');
+			$this->form_validation->set_rules('phone_number', 'Phone number', 'required');
+			$this->form_validation->set_rules('date_of_adding', 'Date of adding', 'required');
+			$this->form_validation->set_rules('additional_notes', 'Additional notes', 'required');
+
+			if ($this->form_validation->run() === TRUE) {
+				$this->phonebook_model->update($id, $this->input->post());
+				redirect('/');
+			} else {
+				$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+				$this->data['id'] = $id;
+				$this->data['type'] = 'update';
+				$this->data['name']['value'] = $this->form_validation->set_value('name');
+				$this->data['phone_number']['value'] = $this->form_validation->set_value('phone_number');
+				$this->data['date_of_adding']['value'] = $this->form_validation->set_value('date_of_adding');
+				$this->data['additional_notes']['value'] = $this->form_validation->set_value('additional_notes');
+				
+				$this->render('phonebook/form', $this->data);
+			}
 		}
 	}
 
