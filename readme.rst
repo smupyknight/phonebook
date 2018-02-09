@@ -24,29 +24,31 @@ Set database configuration variables in the .env file.
 
 For example
 
-`DB_HOST=localhost`
+```
+DB_HOST=localhost
 
-`DB_NAME=phonebook`
+DB_NAME=phonebook
 
-`DB_USER=root`
+DB_USER=root
 
-`DB_PASS=`
+DB_PASS=
+```
 
 Create database named phonebook.
 
 Run following commands in git bash.
 
-`cd phonebook`
+```
+cd phonebook
 
-`composer install`
+composer install
 
-`npm install`
+npm install
 
+vendor/bin/phinx migrate -e development
 
-`vendor/bin/phinx migrate -e development`
-
-`vendor/bin/phinx run:seed -e development`
-
+vendor/bin/phinx run:seed -e development
+```
 
 Open web browser and you'll be able to see app is running on http://localhost/phonebook
 
