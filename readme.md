@@ -1,18 +1,12 @@
-###################
-Phonebook application.
-###################
+# Phonebook application.
 
 This is a simple phone book application.
 
-*******************
-Prerequisites
-*******************
+## Prerequisites
 
-You need to install `xampp <https://www.apachefriends.org/download.html>`_ and `composer <https://getcomposer.org/download>`_ on your PC.
+You need to install [xampp](https://www.apachefriends.org/download.html) and [composer](https://getcomposer.org/download) on your PC.
 
-**************************
-Install guide
-**************************
+## Install guide
 
 Open htdocs folder in your xampp installation directory and open git bash.
 
@@ -24,7 +18,8 @@ Set database configuration variables in the .env file.
 
 For example
 
-```DB_HOST=localhost
+```
+DB_HOST=localhost
 
 DB_NAME=phonebook
 
@@ -37,7 +32,8 @@ Create database named phonebook.
 
 Run following commands in git bash.
 
-```cd phonebook
+```
+cd phonebook
 
 composer install
 
