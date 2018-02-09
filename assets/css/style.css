@@ -1,0 +1,17 @@
+.full-screen {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	min-height: min-content;
+}
+
+.dropdown-menu-right {
+	left: unset;
+	right: 0;
+}
+
+#datatable_wrapper {
+	margin-top: 30px;
+}

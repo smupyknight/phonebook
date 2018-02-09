@@ -1,0 +1,41 @@
+{
+	"description": "The CodeIgniter framework",
+	"name": "codeigniter/framework",
+	"type": "project",
+	"homepage": "https://codeigniter.com",
+	"license": "MIT",
+	"support": {
+		"forum": "http://forum.codeigniter.com/",
+		"wiki": "https://github.com/bcit-ci/CodeIgniter/wiki",
+		"slack": "https://codeigniterchat.slack.com",
+		"source": "https://github.com/bcit-ci/CodeIgniter"
+	},
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "ion_auth",
+				"version": "1.0",
+				"source": {
+					"url": "https://github.com/benedmunds/CodeIgniter-Ion-Auth.git",
+					"type": "git",
+					"reference": "2"
+				}
+			}
+		}
+	],
+	"require": {
+		"php": ">=5.3.7",
+		"robmorgan/phinx": "^0.9.2",
+		"ion_auth": "1.0",
+		"twbs/bootstrap": "^4.0",
+		"vlucas/phpdotenv": "^2.4"
+	},
+	"suggest": {
+		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
+	},
+	"require-dev": {
+		"mikey179/vfsStream": "1.1.*",
+		"phpunit/phpunit": "4.* || 5.*"
+	}
+}
