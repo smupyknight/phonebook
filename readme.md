@@ -41,7 +41,7 @@ npm install
 
 vendor/bin/phinx migrate -e development
 
-vendor/bin/phinx run:seed -e development
+vendor/bin/phinx seed:run -e development
 ```
 
 Open web browser and you'll be able to see app is running on http://localhost/phonebook
