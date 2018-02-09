@@ -24,8 +24,7 @@ Set database configuration variables in the .env file.
 
 For example
 
-```
-DB_HOST=localhost
+```DB_HOST=localhost
 
 DB_NAME=phonebook
 
@@ -38,8 +37,7 @@ Create database named phonebook.
 
 Run following commands in git bash.
 
-```
-cd phonebook
+```cd phonebook
 
 composer install
 
