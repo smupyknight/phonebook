@@ -34,7 +34,7 @@ For example
 
 Create database named phonebook.
 
-Run following commands.
+Run following commands in git bash.
 
 `cd phonebook`
 
