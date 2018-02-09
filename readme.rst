@@ -1,70 +1,44 @@
 ###################
-What is CodeIgniter
+Phonebook application.
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+This is a simple phone book application.
 
 *******************
-Release Information
+Prerequisites
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+You need to install `xampp <https://www.apachefriends.org/download.html>`_ and `composer <https://getcomposer.org/download>`_ on your PC.
 
 **************************
-Changelog and New Features
+Install guide
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+Open htdocs folder in your xampp installation directory and open git bash.
+Run `git clone https://github.com/smupyknight/phonebook.git` to clone repository.
 
-*******************
-Server Requirements
-*******************
+Create .env file in phonebook directory.
+Set database configuration variables.
 
-PHP version 5.6 or newer is recommended.
+For example
+`DB_HOST=localhost`
+`DB_NAME=phonebook`
+`DB_USER=root`
+`DB_PASS=`
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+Create database named phonebook.
 
-************
-Installation
-************
+Run following commands.
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+`cd phonebook`
+`composer install`
+`npm install`
 
-*******
-License
-*******
+`vendor/bin/phinx migrate -e development`
+`vendor/bin/phinx run:seed -e development`
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+Open web browser and you'll be able to see app is running on http://localhost/phonebook
 
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+You can login using these credentials
+email: admin@admin.com
+password: password
