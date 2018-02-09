@@ -1,17 +1,17 @@
 <div class="login-wrapper">
 	<h1><?php echo lang('login_heading'); ?></h1>
-	<p><?php echo lang('login_subheading'); ?></p>
+	<p>Please login with your email and password below.</p>
 
 	<div id="infoMessage"><?php echo $message; ?></div>
 
 	<?php echo form_open(base_url() . "login", array('class' => 'login-form', 'id' => 'login-form'));?>
 		<div class="form-group">
-			<?php echo lang('login_identity_label', 'identity'); ?>
+			Email:
 			<?php echo form_input($identity); ?>
 		</div>
 
 		<div class="form-group">
-			<?php echo lang('login_password_label', 'password'); ?>
+			Password:
 			<?php echo form_input($password); ?>
 		</div>
 
